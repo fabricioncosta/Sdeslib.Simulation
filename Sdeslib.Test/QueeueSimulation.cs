@@ -29,7 +29,6 @@ namespace Sdeslib.Simulation
             Console.WriteLine($"{sim.Now,-10} AddAttendanceQueue {client}");
             var now = sim.Now;
             clientQueue.Enqueue(client);
-
             yield break;
         }
 
@@ -101,4 +100,7 @@ namespace Sdeslib.Simulation
             return averateWaitingTime.Value;
         }
     }
+
+
+
 }
