@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdeslib.Simulation", "Src\Sdeslib.Simulation.csproj", "{70C43D09-C17D-409C-BE01-F716D0432582}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdeslib.Test", "Sdeslib.Test\Sdeslib.Test.csproj", "{5D587579-7C58-467F-89C0-33D26E9925EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70C43D09-C17D-409C-BE01-F716D0432582}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70C43D09-C17D-409C-BE01-F716D0432582}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70C43D09-C17D-409C-BE01-F716D0432582}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70C43D09-C17D-409C-BE01-F716D0432582}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D587579-7C58-467F-89C0-33D26E9925EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D587579-7C58-467F-89C0-33D26E9925EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D587579-7C58-467F-89C0-33D26E9925EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D587579-7C58-467F-89C0-33D26E9925EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7F716C26-B9AA-4D7A-9979-1ACF7BB9FC70}
+	EndGlobalSection
+EndGlobal
