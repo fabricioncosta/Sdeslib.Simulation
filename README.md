@@ -35,7 +35,7 @@ In this library, an event is represented by a method. The method must contain a 
             yield break; //this event does not generate new events
         }
 
-#Simulation Core
+# Simulation Core
 In each step of simulation, the core algoritm does:
 	1) get the next event in the not precessed events queeue. 
 	2) run the commands that change the state of simulation until the first "yield return" is met.
@@ -56,7 +56,7 @@ is able to handle infinity list, as in the following example:
             }
         }
 
-#Stop Condition
+# Stop Condition
 
 The simulation ends when there are no more events to be processed. It also allow finish early a simulation by other four other criterios:
 
@@ -66,7 +66,7 @@ The simulation ends when there are no more events to be processed. It also allow
 * Custom user stop;
 
 
-#Exemple
+# Exemple
 
 The example above simulate a M/M/1 queue. 
 https://en.wikipedia.org/wiki/M/M/1_queue
