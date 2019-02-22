@@ -4,7 +4,7 @@ A very simple impletantation of a discrete event simulation library.
 
 This library allows to simulate discrete sequence of events in time. For more informations related to the Discreve Event Simulation, please refer to https://en.wikipedia.org/wiki/
 
-# Get Starting
+# Getting started
 
 1) Create a new console .Net project and install nuget package using this command:
 Install-Package Sdeslib.Simulation
