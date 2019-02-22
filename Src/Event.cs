@@ -14,6 +14,7 @@ namespace Sdeslib.Simulation
         private static int count = 0;
         public long Id { get; private set; } = count++;
         public long TimeStamp { get; private set; }
+
         public int CompareTo(Event other)
         {
             if (TimeStamp == other.TimeStamp)
@@ -23,6 +24,7 @@ namespace Sdeslib.Simulation
 
             return TimeStamp.CompareTo(other.TimeStamp);
         }
+
         public Func<IEnumerable<Event>> Do { get; private set; }
         public Event Parent { get; set; }
 

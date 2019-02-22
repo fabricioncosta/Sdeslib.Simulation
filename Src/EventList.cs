@@ -33,9 +33,8 @@ namespace Sdeslib.Simulation
             {
                 Insert(first);
             }
-            
+
             return eve;
         }
-        
     }
 }
