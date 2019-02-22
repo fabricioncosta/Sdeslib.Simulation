@@ -5,34 +5,39 @@ using System.Linq;
 
 namespace Sdeslib.Simulation
 {
-    public class Simulation 
+    public class Simulation
     {
         private readonly SortedSet<Event> pendingEvents;
-        public long Now { get; private set; }        
+        public long Now { get; private set; }
+
         public Event NewEvent(long timeStemp, Func<IEnumerable<Event>> eventAction)
         {
-            return new Event(timeStemp, eventAction) ;
+            return new Event(timeStemp, eventAction);
         }
+
         public Simulation()
         {
             pendingEvents = new SortedSet<Event>();
         }
+
         private Event GetNextEvent()
         {
             if (!pendingEvents.Any())
             {
                 return null;
             }
-            
+
             var eve = pendingEvents.FirstOrDefault();
             pendingEvents.Remove(eve);
+
             return eve;
-        }        
+        }
+
         public void InsertEvent(Event eve)
         {
-            pendingEvents.Add(eve);            
+            pendingEvents.Add(eve);
         }
-              
+
         public delegate void TickHandler(long now, Event lastEvent);
 
         public event TickHandler Tick;
@@ -62,20 +67,20 @@ namespace Sdeslib.Simulation
                 return true;
             }
 
-            if (UserStop!=null && UserStop(Now))
+            if (UserStop != null && UserStop(Now))
             {
                 return true;
             }
 
             return false;
         }
-        
+
         private void RunI()
         {
             Now = 0;
-            
+
             stopwatch.Start();
-            
+
             do
             {
                 Event currentEvent = GetNextEvent();
@@ -89,16 +94,15 @@ namespace Sdeslib.Simulation
                     {
                         newEvent.Parent = currentEvent;
                         InsertEvent(newEvent);
-                    }                    
+                    }
                 }
 
                 Tick?.Invoke(Now, currentEvent);
 
                 iterations++;
-                
             } while (pendingEvents.Any() && !Stop());
         }
-        
+
         EventList eventList2 = new EventList();
 
         public void Run()
@@ -113,8 +117,6 @@ namespace Sdeslib.Simulation
             {
                 eventList2.Insert(eve);
             }
-            
-            
 
             do
             {
@@ -136,13 +138,11 @@ namespace Sdeslib.Simulation
                     {
                         eventList2.Insert(enumerator);
                     }
-                    
                 }
 
                 Tick?.Invoke(Now, currentEvent);
 
                 iterations++;
-
             } while (pendingEvents.Any() && !Stop());
         }
 
@@ -151,6 +151,5 @@ namespace Sdeslib.Simulation
             this.Now = 0;
             this.pendingEvents.Clear();
         }
-
     }
 }

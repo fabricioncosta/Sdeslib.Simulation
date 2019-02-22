@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://raw.githubusercontent.com/fabricioncosta/Sdeslib.Simulation/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/fabricioncosta/Sdeslib.Simulation</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>None</releaseNotes>
+    <copyright>Copyright 2019</copyright>
+    <tags>Discrete Event Simulation DES</tags>
+  </metadata>
+</package>

@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Sdeslib.Simulation")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("A simple discrete simulation event simulator")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("fabricioncosta")]
 [assembly: AssemblyProduct("Sdeslib.Simulation")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
