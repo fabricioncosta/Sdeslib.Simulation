@@ -1,9 +1,51 @@
 # Discrete Event Simulation
+
 A very simple impletantation of a discrete event simulation library.
 
 This library allows to simulate discrete sequence of events in time. For more informations related to the Discreve Event Simulation, please refer to https://en.wikipedia.org/wiki/
 
+# Get Starting
+
+1) Create a new console .Net project and install nuget package using this command:
+Install-Package Sdeslib.Simulation
+
+2) Copy the the HelloWorld class to the project
+
+using System;
+using System.Collections.Generic;
+using Sdeslib.Simulation;
+
+namespace HelloWorld
+{
+    class HelloWorldSimulation
+    {
+        Simulation des = new Simulation();
+
+        public void Run()
+        {
+            des.InsertEvent(des.NewEvent(0, HelloWorld));
+            des.Run();
+        }
+
+        private IEnumerable<Event> HelloWorld()
+        {
+            Console.WriteLine("Hello, World!");
+            yield break;
+        }
+
+        static void Main(string[] args)
+        {
+            HelloWorldSimulation program = new HelloWorldSimulation();
+            program.Run();
+        }
+    }
+}
+
+
+
+
 # Events
+
 In this library, an event is represented by a method. The method must contain a (1) set of commands (may change the simulation status) and a sequence of new events to be inserted to the not precessed events queeue.
 
         public IEnumerable<Event> AnEvent1(string client)
@@ -36,6 +78,7 @@ In this library, an event is represented by a method. The method must contain a 
         }
 
 # Simulation Core
+
 In each step of simulation, the core algoritm does:
 	1) get the next event in the not precessed events queeue. 
 	2) run the commands that change the state of simulation until the first "yield return" is met.
