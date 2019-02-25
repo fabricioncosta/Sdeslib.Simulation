@@ -11,7 +11,7 @@ This library allows to simulate discrete sequence of events in time. For more in
 * `Install-Package Sdeslib.Simulation`
 
 2) Copy the the HelloWorld class to the project
-
+```
 using System;
 using System.Collections.Generic;
 using Sdeslib.Simulation;
@@ -41,13 +41,15 @@ namespace HelloWorld
         }
     }
 }
-
+```
 
 
 
 # Events
 
 In this library, an event is represented by a method. The method must contain a (1) set of commands (may change the simulation status) and a sequence of new events to be inserted to the not precessed events queeue.
+
+```
 
         public IEnumerable<Event> AnEvent1(string client)
         {
@@ -77,6 +79,7 @@ In this library, an event is represented by a method. The method must contain a 
         	....            
             yield break; //this event does not generate new events
         }
+```
 
 # Simulation Core
 
@@ -89,6 +92,7 @@ In each step of simulation, the core algoritm does:
 The list of new generated events is traversed lazily. That means, the core algoritm goes reading the not processed list as it is needed. The core algoritm
 is able to handle infinity list, as in the following example:
 
+```
         public IEnumerable<Event> GenerateCustomers()
         {
             var now = sim.Now;
@@ -99,6 +103,8 @@ is able to handle infinity list, as in the following example:
                 yield return sim.NewEvent(now, () => ArriveClient($"client {count++}"));
             }
         }
+	
+```	
 
 # Stop Condition
 
@@ -115,7 +121,7 @@ The simulation ends when there are no more events to be processed. It also allow
 The example above simulate a M/M/1 queue. 
 https://en.wikipedia.org/wiki/M/M/1_queue
 
-
+```
     public class QueeueSimulation
     {
         
@@ -223,4 +229,4 @@ https://en.wikipedia.org/wiki/M/M/1_queue
             Console.WriteLine(sw.Elapsed);
         }
     }
-
+```
