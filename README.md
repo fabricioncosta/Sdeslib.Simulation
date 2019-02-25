@@ -8,7 +8,7 @@ This library allows to simulate discrete sequence of events in time. For more in
 
 1) Create a new console .Net project and install nuget package using this command:
 
-`Install-Package Sdeslib.Simulation`
+* `Install-Package Sdeslib.Simulation`
 
 2) Copy the the HelloWorld class to the project
 
